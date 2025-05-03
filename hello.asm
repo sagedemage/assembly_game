@@ -4,35 +4,24 @@ extern _printf
 extern _system
 
 _main:
-    mov eax, 0
 
-    push top
-    call _printf
-    add esp, 4
-    
+l1:
+    mov bl, '.'
+    mov msg[eax], bl
+    inc eax
+
     push msg
     call _printf
     add esp, 4
     
-    push bottom
-    call _printf
-    add esp, 4
-    
-    push newline
-    call _printf
-    add esp, 4
-
     push clear
     call _system
 
-    add eax, 1
-    jmp _main
-    ret
+    loop l1
+ret
     
 section .data
-    top db "------------", 10, 0
-    msg db "Hello World!", 10, 0
-    bottom db "____________", 10, 0
-    newline db "", 10, 0
+    msg db "############", 10, 0
     clear db "cls", 0
+    num db "0", 10, 0
 
