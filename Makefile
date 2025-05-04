@@ -1,8 +1,8 @@
 asm:
-	nasm -fwin32 hello.asm
+	nasm -fwin32 main.asm
 
 bin:
-	gcc -m32 hello.obj -o hello.exe
+	gcc -m32 main.obj -o main.exe
 
 run:
-	./hello.exe
+	./main.exe
