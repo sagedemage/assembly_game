@@ -21,7 +21,19 @@ _main:
         call _system
         add esp, 4 ; clear the stack
 
+        push title
+        call _printf
+        add esp, 4 ; clear the stack
+
+        push top
+        call _printf
+        add esp, 4 ; clear the stack
+
         push msg
+        call _printf
+        add esp, 4 ; clear the stack
+
+        push bottom
         call _printf
         add esp, 4 ; clear the stack
 
@@ -35,7 +47,10 @@ _main:
         jbe loop
     
 section .data
+    title db "Progress Bar", 10, 0
+    top db "------------", 10, 0
     msg db "............", 10, 0
+    bottom db "____________", 10, 0
     clear db "cls", 0
     num db "0", 10, 0
 
