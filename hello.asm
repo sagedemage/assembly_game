@@ -14,11 +14,11 @@ _main:
 
         push msg
         call _printf
-        add esp, 4
+        add esp, 4 ; clear the stack
     
         ;push clear
         ;call _system
-        ;add esp, 4
+        ;add esp, 4 ; clear the stack
 
         pop eax ; Restore eax (for the loop)
         inc eax ; Increment counter
